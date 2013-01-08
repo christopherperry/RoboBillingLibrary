@@ -255,8 +255,7 @@ public class BillingService extends RoboService implements ServiceConnection {
         BillingRequest request;
         int maxStartId = -1;
         while ((request = mPendingRequests.peek()) != null) {
-            if (mService != null) {
-                runRequest(request);
+            if (runIfConnected(request)) {
                 mPendingRequests.remove();
                 if (maxStartId < request.getStartId()) {
                     maxStartId = request.getStartId();
@@ -271,16 +270,34 @@ public class BillingService extends RoboService implements ServiceConnection {
         }
     }
 
-    private void runRequest(BillingRequest request) {
+    /**
+     * Called when a remote exception occurs while trying to execute the
+     * {@link BillingRequest#run(IMarketBillingService)} method.
+     * @param e the exception
+     */
+    protected void onRemoteException(RemoteException e) {
+        Logger.w(LOG_TAG, "Remote billing service crashed "+e);
+        mService = null;
+    }
+
+    /**
+     * Runs the given billing request if the service is already connected.
+     * @param request the billing request
+     * @return true if the request ran successfully; false if the service
+     * is not connected or there was an error when trying to use it
+     */
+    private boolean runIfConnected(BillingRequest request) {
+        if (mService == null) return false;
         try {
             Logger.v(LOG_TAG, "Running request...");
             final long requestId = request.run(mService);
             Logger.v(LOG_TAG, "Request ID " + requestId + " returned");
             ((GoogleBillingController) billingController).onRequestSent(requestId, request);
+            return true;
         } catch (RemoteException e) {
-            Logger.w(LOG_TAG, "Remote billing service crashed");
-            // TODO: Retry?
+            onRemoteException(e);
         }
+        return false;
     }
 
     private void runRequestOrQueue(BillingRequest request) {
