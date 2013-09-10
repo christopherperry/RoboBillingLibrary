@@ -200,12 +200,12 @@ limitations under the License.
 [2]: http://www.amazon.com/mobile-apps/b?ie=UTF8&node=2350149011
 [3]: https://developer.amazon.com/sdk/in-app-purchasing.html
 [4]: http://developer.android.com/guide/google/play/billing/index.html
-[5]: RoboBillingLibrary/src/com/cperryinc/robobilling/RoboBillingApplication.java
-[6]: RoboBillingLibrary/src/com/cperryinc/robobilling/helper/RoboBillingFragmentActivity.java
+[5]: RoboBillingLibrary/src/com/ensolabs/robobilling/RoboBillingApplication.java
+[6]: RoboBillingLibrary/src/com/ensolabs/robobilling/helper/RoboBillingFragmentActivity.java
 [7]: http://code.google.com/p/roboguice/
 [8]: https://github.com/square/otto
-[9]: RoboBillingLibrary/src/com/cperryinc/robobilling/RoboBillingController.java
-[10]: RoboBillingLibrary/src/com/cperryinc/robobilling/event
+[9]: RoboBillingLibrary/src/com/ensolabs/robobilling/RoboBillingController.java
+[10]: RoboBillingLibrary/src/com/ensolabs/robobilling/event
 [11]: DungeonsRedux
 [12]: http://code.google.com/p/maven-android-plugin/
 [13]: https://github.com/mosabua/maven-android-sdk-deployer
