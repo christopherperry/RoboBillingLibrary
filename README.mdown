@@ -1,7 +1,7 @@
 Robo Billing Library - Beta
 ============================
 
-*Robo Billing Library* is an extention of [Android Billing Library][2], which adds support for [Amazon In-App Purchases][3]. It makes use of [Roboguice][7] for dependency injection, and [Otto][8] for decoupling different parts of the library while still allowing it to communicate efficiently.
+*Robo Billing Library* is an extention of [Android Billing Library](https://github.com/robotmedia/AndroidBillingLibrary) which adds support for [Amazon In-App Purchases][3]. It makes use of [Roboguice][7] for dependency injection, and [Otto][8] for decoupling different parts of the library while still allowing it to communicate efficiently.
 
 Billing Should Be Simple
 ------------------------
@@ -200,13 +200,13 @@ limitations under the License.
 [2]: http://www.amazon.com/mobile-apps/b?ie=UTF8&node=2350149011
 [3]: https://developer.amazon.com/sdk/in-app-purchasing.html
 [4]: http://developer.android.com/guide/google/play/billing/index.html
-[5]: https://github.com/christopherperry/RoboBillingLibrary/blob/master/RoboBillingLibrary/src/com/cperryinc/robobilling/RoboBillingApplication.java
-[6]: https://github.com/christopherperry/RoboBillingLibrary/blob/master/RoboBillingLibrary/src/com/cperryinc/robobilling/helper/RoboBillingFragmentActivity.java
+[5]: src/com/cperryinc/robobilling/RoboBillingApplication.java
+[6]: src/com/cperryinc/robobilling/helper/RoboBillingFragmentActivity.java
 [7]: http://code.google.com/p/roboguice/
 [8]: https://github.com/square/otto
-[9]: https://github.com/christopherperry/RoboBillingLibrary/blob/master/RoboBillingLibrary/src/com/cperryinc/robobilling/RoboBillingController.java
-[10]: https://github.com/christopherperry/RoboBillingLibrary/tree/master/RoboBillingLibrary/src/com/cperryinc/robobilling/event
-[11]: https://github.com/christopherperry/RoboBillingLibrary/tree/master/DungeonsRedux
+[9]: src/com/cperryinc/robobilling/RoboBillingController.java
+[10]: src/com/cperryinc/robobilling/event
+[11]: DungeonsRedux
 [12]: http://code.google.com/p/maven-android-plugin/
 [13]: https://github.com/mosabua/maven-android-sdk-deployer
 [14]: https://developer.amazon.com/sdk/thank-you.html
